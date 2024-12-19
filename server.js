@@ -3,7 +3,9 @@ import './db/connection.js'
 import dotenv from 'dotenv'
 import morgan from 'morgan'
 import express from 'express'
+
 import userRouter from './controllers/user.js'
+import coursesRouter from './controllers/courses.js'
 
 dotenv.config();
 const app = express();
@@ -14,6 +16,7 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 app.use('/users', userRouter)
+app.use('/courses', coursesRouter)
 
 app.listen(PORT, () => {
     console.log('The express app is ready!')
