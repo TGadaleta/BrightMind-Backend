@@ -35,8 +35,8 @@ router.post("/signup", async (req, res) => {
 
 router.post("/", async (req, res) => {
   try {
-    const user = User.findOne({ username: req.body.username });
-    if (user && bycrypt.compareSync(req.body.password, user.hashedPassword)) {
+    const user = await User.findOne({ username: req.body.username });
+    if (user && bcrypt.compareSync(req.body.password, user.hashedPassword)) {
       const token = jwt.sign(
         {
           username: user.username,
