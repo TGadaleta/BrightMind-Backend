@@ -35,7 +35,7 @@ const userSchema = new mongoose.Schema({
         ref: 'Course'
     }],
     todos:[{
-        type: [todoSchema],
+        type: todoSchema,
     }]
 })
 
@@ -45,6 +45,7 @@ userSchema.set("toJSON", {
     },
   });
 
+const Todo = mongoose.model('Todo', todoSchema)  
 const User = mongoose.model('User', userSchema)
 
-export default User
+export { User, Todo }
