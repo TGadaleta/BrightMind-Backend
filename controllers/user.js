@@ -4,7 +4,7 @@ import jwt from "jsonwebtoken";
 import verifyToken from "../middleware/verifyToken.js";
 
 import Course from "../models/course.js";
-import { User, Todo } from "../models/user.js";
+import User from "../models/user.js";
 
 const router = express.Router();
 
