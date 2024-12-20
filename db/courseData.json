@@ -1,0 +1,138 @@
+[
+    {
+      "name": "Introduction to Artificial Intelligence",
+      "department": "Computer Science",
+      "description": "An introductory course covering AI, including neural networks and machine learning.",
+      "lessons": [
+        {
+          "name": "What is AI?",
+          "text": "Introduction to the concept and applications of AI."
+        },
+        {
+          "name": "Machine Learning Basics",
+          "text": "Exploring the basics of supervised and unsupervised learning."
+        },
+        {
+          "name": "Neural Networks",
+          "text": "Understanding the structure and function of neural networks."
+        },
+        {
+          "name": "AI in Real-World Applications",
+          "text": "Examining how AI is applied across industries."
+        },
+        {
+          "name": "Ethics in AI",
+          "text": "Discussing the ethical implications of AI technology."
+        }
+      ]
+    },
+    {
+      "name": "Web Development Fundamentals",
+      "department": "Software Engineering",
+      "description": "Learn the foundations of modern web development using HTML, CSS, and JavaScript.",
+      "lessons": [
+        {
+          "name": "Introduction to HTML",
+          "text": "Learn about HTML and its role in web development."
+        },
+        {
+          "name": "CSS Basics",
+          "text": "Discover how CSS styles web pages."
+        },
+        {
+          "name": "JavaScript Introduction",
+          "text": "Understand JavaScript's role in building interactive websites."
+        },
+        {
+          "name": "DOM Manipulation",
+          "text": "Learn how to modify HTML using JavaScript and the DOM."
+        },
+        {
+          "name": "Web Development Tools",
+          "text": "Explore tools like VS Code, Git, and browser dev tools."
+        }
+      ]
+    },
+    {
+      "name": "Data Science for Beginners",
+      "department": "Data Science",
+      "description": "Learn how to work with data, analyze it, and create data visualizations.",
+      "lessons": [
+        {
+          "name": "Data Collection",
+          "text": "Explore methods for collecting and storing data."
+        },
+        {
+          "name": "Data Cleaning",
+          "text": "Learn how to clean and process raw data."
+        },
+        {
+          "name": "Data Analysis",
+          "text": "Analyze data using basic statistical methods."
+        },
+        {
+          "name": "Data Visualization",
+          "text": "Create data visualizations using common tools."
+        },
+        {
+          "name": "Reporting Results",
+          "text": "Learn how to present data analysis results effectively."
+        }
+      ]
+    },
+    {
+      "name": "Business Strategy 101",
+      "department": "Business",
+      "description": "Learn the basics of strategic management, planning, and execution.",
+      "lessons": [
+        {
+          "name": "Introduction to Business Strategy",
+          "text": "Understand the importance of a business strategy."
+        },
+        {
+          "name": "Market Analysis",
+          "text": "Learn how to analyze market conditions and competition."
+        },
+        {
+          "name": "Strategic Planning",
+          "text": "Discover how to create a long-term strategic plan."
+        },
+        {
+          "name": "Resource Management",
+          "text": "Manage business resources effectively for long-term success."
+        },
+        {
+          "name": "Performance Evaluation",
+          "text": "Measure business performance against strategic goals."
+        }
+      ]
+    },
+    {
+      "name": "Creative Writing Workshop",
+      "department": "English Literature",
+      "description": "Explore the art of creative writing through guided exercises and peer reviews.",
+      "lessons": [
+        {
+          "name": "Finding Your Voice",
+          "text": "Discover how to find your unique writing style."
+        },
+        {
+          "name": "Developing Characters",
+          "text": "Learn how to create believable and compelling characters."
+        },
+        {
+          "name": "Crafting Dialogue",
+          "text": "Write realistic and engaging dialogue."
+        },
+        {
+          "name": "Plot Development",
+          "text": "Understand how to build and maintain a compelling story arc."
+        },
+        {
+          "name": "Editing and Rewriting",
+          "text": "Learn the process of editing and improving your work."
+        }
+      ]
+    }
+  ]
+  
