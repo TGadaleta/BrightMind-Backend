@@ -45,7 +45,6 @@ userSchema.set("toJSON", {
     },
   });
 
-const Todo = mongoose.model('Todo', todoSchema)  
 const User = mongoose.model('User', userSchema)
 
-export { User, Todo }
+export default User
