@@ -94,7 +94,6 @@ router.put("/:userId/courses/:courseId/drop", verifyToken, async (req, res) => {
       return res.status(403).send("Not a valid user");
     }
     const course = req.params.courseId;
-    console.log(course);
     if (!user.courses.includes(course)) {
       return res.status(403).send("You are not enrolled in this course");
     }

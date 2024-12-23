@@ -16,7 +16,6 @@ router.get('/', async (req, res) => {
 router.get('/:courseId', async (req,res) => {
     try {
         const course = await Course.findById(req.params.courseId).populate('lessons')
-        console.log(course)
         res.status(200).json(course)
     } catch (error) {
         res.status(500)
