@@ -93,19 +93,26 @@ router.put("/:userId/courses/:courseId", verifyToken, async (req, res) => {
 
 router.put("/:userId/courses/:courseId/drop", verifyToken, async (req, res) => {
   try {
-    const user = await User.findById(req.params.userId);
+    const userId = req.params.userId
+    const user = await User.findById(userId);
     if (!user) {
       return res.status(403).send("Not a valid user");
     }
-    const course = req.params.courseId;
-    if (!user.courses.includes(course)) {
+    const courseId = req.params.courseId;
+    const course = await Course.findById(courseId)
+    if (!user.courses.includes(courseId)) {
       return res.status(403).send("You are not enrolled in this course");
     }
-    const removeIndex = user.courses.findIndex(
-      (id) => id.toString() === course
+    const courseIndex = user.courses.findIndex(
+      (id) => id.toString() === courseId
     );
-    const removedCourse = user.courses.splice(removeIndex, 1);
+    const userIndex = course.users.findIndex(
+      (id) => id.toString() === userId
+    );
+    const removedCourse = user.courses.splice(courseIndex, 1);
+    const removedUser = course.users.splice(userIndex, 1);
     await user.save();
+    await course.save();
     res.status(200).json(removedCourse);
   } catch (error) {
     res.status(500).json(error);
