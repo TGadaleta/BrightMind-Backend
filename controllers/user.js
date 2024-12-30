@@ -71,17 +71,21 @@ router.get("/:userId/courses", verifyToken, async (req, res) => {
 
 router.put("/:userId/courses/:courseId", verifyToken, async (req, res) => {
   try {
-    const user = await User.findById(req.params.userId);
+    const userId = req.params.userId
+    const user = await User.findById(userId);
     if (!user) {
       return res.status(403).send("Not a valid user");
     }
-    const course = req.params.courseId;
-    if (user.courses.includes(course)) {
+    const courseId = req.params.courseId;
+    const course = await Course.findById(courseId)
+    if (user.courses.includes(courseId)) {
       return res.status(403).send("You are already enrolled in this course");
     }
-    user.courses.push(course);
+    user.courses.push(courseId);
+    course.users.push(userId)
     await user.save();
-    res.status(200).json(course);
+    await course.save();
+    res.status(200).json(courseId);
   } catch (error) {
     res.status(500).json(error);
   }
