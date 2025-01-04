@@ -120,7 +120,8 @@ router.get(
         return res.status(403).send("This is not a valid course");
       }
       const lessonId = req.params.lessonId;
-      const lesson = course.lessons.filter((lesson) => lesson.equals(lessonId));
+      const lessonArray = course.lessons.filter((lesson) => lesson.equals(lessonId));
+      const lesson = lessonArray[0];
       if (!lesson) {
         return res.status(403).send("This is not a valid lesson");
       }
