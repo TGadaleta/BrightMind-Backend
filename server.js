@@ -18,6 +18,10 @@ app.use(express.json());
 app.use('/users', userRouter)
 app.use('/courses', coursesRouter)
 
+app.get('/', (req, res) => {
+    res.json({message: 'Your app is working'})
+  })
+
 app.listen(PORT, () => {
     console.log('The express app is ready!')
 })

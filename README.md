@@ -7,3 +7,6 @@ Current backend for BrightMind app. Currently can create a user, join preset dum
 
 [BrightMind Frontend](https://github.com/TGadaleta/BrightMind-frontend)
 
+## Tech Used
+
+This backend was build using bcrypt, cors, dotenv, express, jsonwebtoken, mongoose, morgan, and nodemon.
