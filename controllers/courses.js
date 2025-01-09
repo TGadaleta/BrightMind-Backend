@@ -24,24 +24,33 @@ router.get('/:courseId', async (req,res) => {
     }
 })
 
-router.post('/add', verifyToken, async (req,res) => {
+router.post('/add', verifyToken, async (req, res) => {
     try {
-        const newCourse = req.body
-        const courses = await Course.find({})
-        const repeatedCourse = courses.some(course => course.name === newCourse.name)
-        if (repeatedCourse){
-            return res.status(412).json( {message: "This class name already exists. Please pick a new one"} )
+        const { owner, name, department, description } = req.body;
+
+        // Validate required fields
+        if (!owner || !name || !department || !description) {
+            return res.status(400).json({ message: "All fields are required." });
         }
-        const addedCourse = await Course.create(
-            {
-                name: newCourse.name,
-                department: newCourse.department,
-                description: newCourse.description
-            });
-        return res.status(200).json(addedCourse)
+
+        // Check for duplicate course name
+        const repeatedCourse = await Course.findOne({ name });
+        if (repeatedCourse) {
+            return res
+                .status(412)
+                .json({ message: "This class name already exists. Please pick a new one." });
+        }
+
+        // Create and save the new course
+        const addedCourse = await Course.create({ owner, name, department, description });
+
+        // Send success response
+        return res.status(200).json(addedCourse);
     } catch (error) {
-        res.status(500).json(error)
+        console.error('Error adding course:', error); // Log the error for debugging
+        return res.status(500).json({ message: "Internal server error. Please try again later." });
     }
-})
+});
+
 
 export default router
